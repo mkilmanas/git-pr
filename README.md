@@ -38,6 +38,6 @@ The remote repository to use is determined by taking the first entry from remote
 - Integrate with git autocomplete for branch names
 
 # Authorship
-Inspired and initial development by @asarturas
-Updates and publishing by @mkilmanas
+Inspired and initial development by @asarturas  
+Updates and publishing by @mkilmanas  
 PRs, issues an comments welcome
