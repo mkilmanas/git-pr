@@ -12,7 +12,7 @@ then
     ECHO_FLAG='-e'
 fi
 
-if [ "$TARGET"="--help" -o "$TARGET"="-h" ]; then
+if [ "$TARGET" = "--help" ] || [ "$TARGET" = "-h" ]; then
     echo $ECHO_FLAG "Usage: git pr [<branch>]"
     echo $ECHO_FLAG "See https://github.com/mkilmanas/git-pr/blob/master/README.md for more details"
     echo ""
