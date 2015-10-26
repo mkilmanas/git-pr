@@ -33,8 +33,13 @@ if [ -z $TARGET ]; then
     exit 1;
 fi
 
-URL_FORMAT="https://github.com/%s/compare/%s...%s"
-URL=$(printf $URL_FORMAT $REPOSITORY $TARGET $SOURCE)
+URL_FORMAT=`git config --get pr.url-pattern`
+
+if [ -z $URL_FORMAT ]; then
+    URL_FORMAT="https://github.com/%s/compare/%s...%s"
+fi;
+
+URL=$(printf "$URL_FORMAT" "$REPOSITORY" "$TARGET" "$SOURCE")
 
 echo $ECHO_FLAG "\033[0;33m"$URL"\033[0m"
 
