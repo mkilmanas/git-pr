@@ -4,11 +4,6 @@ Git utility to allow quick GitHub Pull Request (PR) creation from command line u
 ## Setup
 1. Make this script executable: `chmod +x git-pr.sh`
 2. Add it to local bin: `ln -s /path/to/git-pr.sh /usr/local/bin/git-pr`
-3. Add alias into `~/.gitconfig`:
-```
-[alias]
-    pr = "!git-pr"
-```
 
 ## Config (optional)
 You can specify the default branch against which the PR's should be created against in your git config.
@@ -21,6 +16,11 @@ And then you can specify a different value per each git repository:
 git config --add pr.default-branch develop
 ```
 If you choose not to have configured default(s), you will need to specify the branch on each command run
+
+If you have a repository name containing dots, it will not be detected correctly and to work around this issue, you can set the repository name in the local configuration:
+```
+git config --local --add pr.repository "mkilmanas/git.pr"
+```
 
 # Usage
 ```
@@ -40,4 +40,4 @@ The remote repository to use is determined by taking the first entry from remote
 # Authorship
 Inspired and initial development by **[@asarturas](https://github.com/asarturas)**  
 Updates and publishing by **[@mkilmanas](https://github.com/mkilmanas)**  
-PRs, issues an comments welcome
+PRs, issues and comments welcome
