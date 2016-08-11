@@ -3,7 +3,7 @@
 # Installation and usage:
 # See README at https://github.com/mkilmanas/git-pr/blob/master/README.md
 
-REPOSITORY=`git remote -v | grep -oE --max-count=1 '[^:]+/[^.]+'`
+REPOSITORY=`git config pr.repository || git remote -v | grep -oE --max-count=1 '[^:]+/[^.]+'`
 SOURCE=`git rev-parse --abbrev-ref HEAD`
 TARGET=$1
 
